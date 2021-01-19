@@ -35,7 +35,7 @@ context('Actions', () => {
 
   it('.focus() - focus on a DOM element', () => {
     // https://on.cypress.io/focus
-    cy.get('.action-focus').focus()
+    cy.get('.actio-focus').focus()
       .should('have.class', 'focus')
       .prev().should('have.attr', 'style', 'color: orange;')
   })
@@ -109,7 +109,7 @@ context('Actions', () => {
     cy.get('.action-labels>.label').click({ multiple: true })
 
     // Ignore error checking prior to clicking
-    cy.get('.action-opacity>.btn').click({ force: true })
+    cy.get('.action-opacity>.btn').click()
   })
 
   it('.dblclick() - double click on a DOM element', () => {
@@ -118,7 +118,7 @@ context('Actions', () => {
     // Our app has a listener on 'dblclick' event in our 'scripts.js'
     // that hides the div and shows an input on double click
     cy.get('.action-div').dblclick().should('not.be.visible')
-    cy.get('.action-input-hidden').should('be.visible')
+    cy.get('.action-input-hidden').should('not.be.visible')
   })
 
   it('.rightclick() - right click on a DOM element', () => {
