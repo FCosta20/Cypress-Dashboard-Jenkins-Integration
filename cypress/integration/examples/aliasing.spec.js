@@ -3,6 +3,9 @@
 context('Aliasing', () => {
   beforeEach(() => {
     cy.visit('https://example.cypress.io/commands/aliasing')
+    cy.lighthouse({
+      performance: 80
+    })
   })
 
   it('.as() - alias a DOM element for later use', () => {

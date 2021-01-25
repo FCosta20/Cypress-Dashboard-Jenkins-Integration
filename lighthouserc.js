@@ -1,7 +1,9 @@
 module.exports = {
     ci: {
-        upload: {
-            target: "temporary-public-storage"
+        collect: {
+            url: "https://example.cypress.io",
+            headful: false,
+            n: 2
         }
     }
 }

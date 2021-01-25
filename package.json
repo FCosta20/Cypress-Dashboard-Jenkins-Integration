@@ -1,0 +1,22 @@
+{
+  "name": "lhci",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build --prod  --base-href ./ && cp CNAME dist/CNAME",
+    "test": "ng test",
+    "lint": "ng lint --force",
+    "e2e": "ng e2e",
+    "cypress": "npx cypress open",
+    "lighthouse": "lhci collect --output-path=./lighthouse-report.html --quiet --chrome-flags='--headless' --url=https://www.solvd.com"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "cypress": "^5.6.0",
+    "lighthouse": "^7.0.0"
+  }
+}
