@@ -16,5 +16,6 @@ jobs:
           npx cypress run
       - name: run Lighthouse CI
         run: |
-          npm install -g @lhci/cli@0.3.x
-          lhci autorun --upload.target=temporary-public-storage || echo "LHCI failed!"
+          npm install -g @lhci/cli@0.6.x
+          lhci healthcheck --fatal
+          lhci autorun --collect.url=temporary-public-storage || echo "LHCI failed!"
