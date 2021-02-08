@@ -1,3 +1,11 @@
 {
-    "projectId": "gxb37c"
+    "projectId": "gxb37c",
+    "sites":[
+        {
+            "url": "https://google.com"
+        },
+        {
+            "url":"https://exa.unicen.edu.ar"
+        }
+    ]
 }

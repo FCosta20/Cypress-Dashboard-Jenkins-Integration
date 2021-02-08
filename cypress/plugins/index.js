@@ -35,4 +35,14 @@ module.exports = (on, config) => {
       console.log(pa11yReport); // raw pa11y reports
     }),
   });
+
+  on("task", {
+    transform({filename,sheet,cell}){
+      const xlsx = require("xlsx");
+      var wb = xlsx.readFile("cypress/fixtures/"+filename);
+      var ws = wb.Sheets[sheet];
+      var url = ws[cell];
+      return url.l.Target;
+    }
+  });
 };
